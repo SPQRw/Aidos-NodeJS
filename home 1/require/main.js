@@ -1,0 +1,7 @@
+const test = require("./module2.js")
+console.log(test.RectangleArea(4,5))
+console.log(test.RectanglePerimeter(4,5))
+console.log(test.CircleArea(4,5))
+console.log(test.CirclePerimeter(4,5))
+console.log(test.TriangleArea(4,5))
+console.log(test.TrianglePerimeter(4,5,6))
