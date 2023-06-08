@@ -11,11 +11,11 @@ export function sayHi(test) {
     " | \n" +
     " | \n" +
     " | \n" +
-    " ^  ^ \n" +
-    "  ___\n" +
+    " ^___^ \n" +
+    // "  ___\n" +
     " (o o)\n" +
     "(  V  )\n" +
-    "/--m-m-;";
+  "/--m-m-;";
 
   return d;
 }
