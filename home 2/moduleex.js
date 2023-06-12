@@ -1,16 +1,12 @@
 export function takeNam(text) {
-  return new Promise((resolve,reject) =>{
+  return new Promise((resolve, reject) => {
     process.stdin.on("data", (data) => {
       let uname = data.toString();
-      console.log("your name is ", uname);
+      console.log("your age is ", uname);
       process.stdin.pause();
-      
     });
     process.stdout.write(text);
-  })
+  });
 
-//   user_ask_lastname = false;
-
-
+  //   user_ask_lastname = false;
 }
-
