@@ -6,9 +6,9 @@ class UserInput extends EventEmitter {
     process.stdin.on("data", (data) => {
       input = data.toString().trim();
       if (input.startsWith("solve")) {
-        this.emit("solve", input);
-      } else if (input === "exit") {
-        stop();
+        this.solve(input);
+      } else if (input == "exit") {
+        this.stop();
       } else {
         this.emit("input", input);
       }
@@ -16,18 +16,16 @@ class UserInput extends EventEmitter {
   }
 
   start() {
-    console.log("Input listening started");
+    console.log("Введите что нибудь");
   }
 
   stop() {
-    if (input == "exit") {
-      console.log("Input listening stopped");
-      process.stdin.pause();
-    }
+    console.log("Ввод данных остановлен");
+    process.stdin.pause();
   }
 
   solve(input) {
-    const expression = input.slice(1).trim();
+    const expression = input.slice(6).trim();
     const result = eval(expression);
     if (typeof result === "number" && isFinite(result)) {
       console.log(result);
@@ -39,7 +37,7 @@ class UserInput extends EventEmitter {
 
 const userInput = new UserInput();
 userInput.on("input", (input) => {
-  console.log(`Received input: ${input}`);
+  console.log(`Вывод: ${input}`);
 });
 userInput.on("solve", () => {
   userInput.solve();
