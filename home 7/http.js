@@ -99,7 +99,7 @@ function worker(request, response) {
           let users = JSON.parse(data);
           console.log("imya polz v json=", users);
           let take = users.find((o) => o.username === nameParam);
-          //console.log("sravnenie=", take.username);
+          // console.log("sravnenie=", take.username);
           if (take?.username === nameParam) {
             let page = fs.readFileSync("./users.html", "utf8");
             page = page.replace("%name%", nameParam);
