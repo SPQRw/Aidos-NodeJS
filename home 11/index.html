@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Socket</title>
+    <script src="/socket.io/socket.io.js"></script>
+  </head>
+  <body>
+    <h1>Socket.io</h1>
+    <h2>Connected Users:</h2>
+    <ul id="connections"></ul>
+    <hr />
+    <h2>Private Messages:</h2>
+    <ul id="messages"></ul>
+    <input type="text" id="messageInput" placeholder="Write a message" />
+    <button onclick="sendMessage()">Send</button>
+
+    <script>
+      // Подключение к серверу
+      const socket = io();
+
+      // Получение списка id подключений
+      socket.on("connections", (connections) => {
+        const connectionsList = document.getElementById("connections");
+        connectionsList.innerHTML = "";
+        connections.forEach((connection) => {
+          const listItem = document.createElement("li");
+          listItem.innerText = connection;
+          connectionsList.appendChild(listItem);
+        });
+      });
+
+      // Получение приватного сообщения
+      socket.on("privateMessage", (message) => {
+        const messagesList = document.getElementById("messages");
+        const listItem = document.createElement("li");
+        listItem.innerText = message;
+        messagesList.appendChild(listItem);
+      });
+
+      // Отправка приватного сообщения
+      function sendMessage() {
+        const target = prompt("Enter the ID:");
+        const message = document.getElementById("messageInput").value;
+
+        socket.emit("privateMessage", { target, message });
+      }
+    </script>
+  </body>
+</html>
