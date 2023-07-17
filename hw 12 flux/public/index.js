@@ -1,6 +1,7 @@
 import * as actions from "./actions.js";
 import { dispatcher } from "./dispatcher.js";
 import { countView } from "./view.js";
+import { listView } from "./view.js";
 import { store } from "./store.js";
 
 console.log(actions.types);
@@ -26,4 +27,5 @@ clearButton.addEventListener("click", () => {
 
 addButton.addEventListener("click", () => {
   dispatcher.dispatch(actions.add());
+  let counter = new listView(store);
 });

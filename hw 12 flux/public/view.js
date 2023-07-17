@@ -19,7 +19,9 @@ export class listView {
   }
 
   render = () => {
-    const countElement = document.querySelector(".number");
-    countElement.textContent = this.store.getState().count.toString();
+    const addElement = document.querySelector(".list");
+    const list = document.createElement("li");
+    list.textContent = "Hello world";
+    addElement.appendChild(list);
   };
 }
