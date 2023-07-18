@@ -31,6 +31,14 @@ function createStore(reducer) {
 }
 
 export const store = createStore(reducer.countReducer);
+// Upd:      ^^^^^ лучше бы, конечно, его переименовать. в countStore, например. А то легко будет запутаться
+
+
+/* VN: Здесь вам не нужна ещё одна функция listStore, которая ниже. Ведь она точно такая же, в ней нет смысла!
+Всё что вам нужно, это написать: 
+
+export const list = createStore(reducer.listReducer);   // и функция-редуктор у каждого store должен быть свой
+*/
 
 function listStore(reducer) {
   let state = reducer();
