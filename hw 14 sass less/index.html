@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>design</title>
+  </head>
+  <body>
+    <header>
+      <div class="header__logo">KAYAKO</div>
+      <nav>
+        <div class="nav__links">
+          FEATURES
+          <div class="first_link">
+            tour single <br />
+            view
+          </div>
+        </div>
+        <div class="nav__links">
+          SOLUTIONS
+          <div class="second_link"></div>
+        </div>
+        <div class="nav__links">
+          CUSTOMERS
+          <div class="third_link"></div>
+        </div>
+        <div class="nav__links">
+          BLOG
+          <div class="fourd_link"></div>
+        </div>
+        <div class="nav__links">HOME</div>
+      </nav>
+    </header>
+    <main>
+      <div class="bg">
+        <img src="./public/help-desk-agents.webp" alt="" />
+      </div>
+      <div class="left__main">
+        <h1>
+          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Porro,
+          minus.
+        </h1>
+        <p>
+          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Id iure
+          autem ipsum delectus deleniti minima, rerum facere qui? Minus illum
+          aut illo iure quisquam harum pariatur recusandae enim nam porro.
+        </p>
+        <button class="btn">Free trial</button>
+        <button class="btn">Take the tour</button>
+        <a href="#">
+          <img src="./public/client-logos@2x.webp" alt="" />
+        </a>
+      </div>
+    </main>
+    <footer>
+      <a href="#"></a>
+      <a href="#"></a>
+      <a href="#"></a>
+      <a href="#"></a>
+    </footer>
+    <script>
+      const links = document.querySelectorAll(".nav__links");
+      console.log(links);
+      links[0].onmouseenter = function () {
+        document.querySelector(".first_link").style.display = "block";
+      };
+      links[0].onmouseleave = function () {
+        document.querySelector(".first_link").style.display = "none";
+      };
+      links[1].onmouseenter = function () {
+        document.querySelector(".second_link").style.display = "block";
+      };
+      links[1].onmouseleave = function () {
+        document.querySelector(".second_link").style.display = "none";
+      };
+      links[2].onmouseenter = function () {
+        document.querySelector(".third_link").style.display = "block";
+      };
+      links[2].onmouseleave = function () {
+        document.querySelector(".third_link").style.display = "none";
+      };
+      links[3].onmouseenter = function () {
+        document.querySelector(".fourd_link").style.display = "block";
+      };
+      links[3].onmouseleave = function () {
+        document.querySelector(".fourd_link").style.display = "none";
+      };
+    </script>
+    <script type="module" src="/main.js"></script>
+  </body>
+</html>
