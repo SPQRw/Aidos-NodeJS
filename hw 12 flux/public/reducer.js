@@ -4,6 +4,16 @@ const initialState = { count: 0 };
 const listState = {
   list: [],
 };
+
+/* VN: Редуктор нужно разделить на два отдельных: countReducer и listReducer.
+Первый занимается только счётчиком, а второй - только списком. И они не зависят друг от друга:
+
+export function countReducer(state=initialState, action) {
+  ...
+export function listReducer(state=listState, action) {
+  ...
+*/
+
 export function countReducer(state, action) {
   console.log("countReducer()", action);
   if (!action) return state;
