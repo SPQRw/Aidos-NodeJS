@@ -32,15 +32,15 @@ export const postRequest = async (url, body) => {
 //  переменная для хранения результата отправки GET запроса
 export const getRequest = async (url) => {
   const response = await fetch(url);
-
   const data = await response.json();
   if (!response.ok) {
     let message = "Error";
     if (data?.message) {
       message = data.message;
+      console.log(message);
     }
     return { error: true, message };
   }
-  console.log("if", data);
+
   return data;
 };
